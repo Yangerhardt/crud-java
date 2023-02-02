@@ -41,4 +41,5 @@ public class Contato {
 		this.dataCadastro = dataCadastro;
 	}
 
+
 }
