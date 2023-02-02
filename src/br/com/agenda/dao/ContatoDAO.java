@@ -162,4 +162,45 @@ public class ContatoDAO {
 		}
 		return contatos;
 	}
+
+	public String getContatoByID(int id) {
+		Contato contato = new Contato();
+		String sql = "SELECT * FROM contatos WHERE id = ?";
+
+		Connection con = null;
+		PreparedStatement pstm = null;
+
+		ResultSet rset = null;
+
+		try {
+			con = FactoryConnection.createConnectionToPostgre();
+			pstm = con.prepareStatement(sql);
+
+			pstm.setInt(1, id);
+
+			rset = pstm.executeQuery();
+
+			while (rset.next()) {
+				contato.setNome(rset.getString("nome"));
+				contato.setIdade(rset.getInt("idade"));
+				contato.setDataCadastro(rset.getDate("dataCadastro"));
+				contato.setId(rset.getInt("id"));				
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstm != null) {
+					pstm.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return "ID: " + contato.getId() + "\nContato: " + contato.getNome() + "\nIdade: " + contato.getIdade() + "\nData de Cadastro: " + contato.getDataCadastro();
+	}
 }

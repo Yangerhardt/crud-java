@@ -14,36 +14,35 @@ public class Main {
 		contato.setNome("João Ricardo");
 		contato.setIdade(45);
 		contato.setDataCadastro(new Date());
-		
+
 		// contatoDao.add(contato);
-		
+
 		// Atualizar o contato:
-		
-		Contato c1 = new Contato();
-		c1.setNome("João Ricardo da Silva");
-		c1.setIdade(70);
-		c1.setDataCadastro(new Date());
-		c1.setId(4);
-		
-		contatoDao.update(c1);
-		
-		
-		
+
+		/*
+		 * Contato c1 = new Contato(); c1.setNome("João Ricardo da Silva");
+		 * c1.setIdade(70); c1.setDataCadastro(new Date()); c1.setId(4);
+		 * 
+		 * contatoDao.update(c1);
+		 */
+
 		// Vizualização de todos os registros do banco de dados
+
+		/*
+		 * for (Contato c : contatoDao.getContatos()) { System.out.println("ID: " +
+		 * c.getId()); System.out.println("Contato: " + c.getNome());
+		 * System.out.println("Idade: " + c.getIdade());
+		 * System.out.println("Data de Cadastro: " + c.getDataCadastro());
+		 * System.out.println(); }
+		 */
+
+		// Deletar contato:
 		
-		for (Contato c : contatoDao.getContatos()) {
-			System.out.println("ID: " + c.getId());
-			System.out.println("Contato: " + c.getNome());
-			System.out.println("Idade: " + c.getIdade());
-			System.out.println("Data de Cadastro: " + c.getDataCadastro());
-			System.out.println();
-		}
+		// contatoDao.deleteByID(1)
 		
-		// Deletar contato: 
+		// Encontrar contato por ID
 		
-		 contatoDao.deleteByID(2);
-		
-		
-		
+		System.out.println(contatoDao.getContatoByID(1));
+
 	}
 }
