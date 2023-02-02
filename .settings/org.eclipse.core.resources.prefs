@@ -2,4 +2,6 @@ eclipse.preferences.version=1
 encoding//src/br/com/agenda/aplicacao/Main.java=UTF-8
 encoding//src/br/com/agenda/dao/ContatoDAO.java=UTF-8
 encoding//src/br/com/agenda/factory/FactoryConnection.java=UTF-8
+encoding//src/br/com/crypto/factory/FactoryConnection.java=UTF-8
+encoding//src/br/com/crypto/main/Main.java=UTF-8
 encoding/<project>=US-ASCII

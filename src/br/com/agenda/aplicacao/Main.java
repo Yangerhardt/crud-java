@@ -37,11 +37,11 @@ public class Main {
 		 */
 
 		// Deletar contato:
-		
+
 		// contatoDao.deleteByID(1)
-		
+
 		// Encontrar contato por ID
-		
+
 		System.out.println(contatoDao.getContatoByID(1));
 
 	}
